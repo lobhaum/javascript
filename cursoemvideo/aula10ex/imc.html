@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 10 ex - IMC</title>
+  <style>
+    * {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    br {
+      line-height: 50px;
+    }
+
+    input[type=button] {
+      background-color: #4CAF50;
+      border-radius: 20px;
+      border: none;
+      color: #fff;
+      font: normal 18pt Arial;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    div#res {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Índice de Massa Corporal(IMC)v0.0.1</h1>
+  Peso Atual:
+  <input type="number" name="peso" id="peso">Kg.<br />
+  Altura:
+  <input type="number" name="altura" id="altura">cm.<br />
+  <input type="button" value="Calcular" onclick="imc()"><br />
+  <div id="resultado">Qual será o seu IMC?</div>
+
+  <script>
+    function imc() {
+      let p = window.document.querySelector("input#peso")
+      let a = window.document.querySelector("input#altura")
+      let r = window.document.getElementById('resultado')
+      let n1 = Math.floor(Number(p.value))
+      let n2 = Math.floor((a.value))
+      let i = (n1 / (n2 * n2)) * 10000
+      let ii = Math.round(i * 10) / 10
+      r.innerHTML = `O seu IMC atual é ${ii}.<br/>`
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Aula 11 ex 011</title>
+  <style>
+    * {
+      line-height: 10px
+    }
+    body{
+      background: #2196F3;
+      position: relative;
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+    }
+    input{
+      border: 0;
+      border-bottom: 2px solid #1976D2;
+      width: 100%;
+      font-size: 30px;
+      line-height: 35px;
+      height: 70px;
+      text-align: center;
+      padding: 10px;
+      background: transparent;
+      color: rgb(187, 217, 251);
+
+    }
+    span{
+      color: #61e20b
+    }
+    span#nao{
+      color: red
+    }
+    div#resultado{
+      position: relative;
+      display: block;
+      height: 30px;
+      margin: 20px 0;
+      text-align: center;
+      cursor: not-allowed;
+    }
+    br{
+      line-height: 35px;
+    }
+  </style>
+</head>
+<body>
+ <h1>Verificação de Nacionalidade</h1> 
+ Qual seu país de origem?<br/>
+ <input type="text" name="txtpais" id="txtpais"><br/>
+ <input type="button" value="Verificar" onclick="verificar()">
+ <div id="resultado"></div>
+ <script>
+ function verificar(){
+   const pais = window.document.querySelector('input#txtpais')
+   const resu = window.document.querySelector('div#resultado')
+   const presu = pais.value
+   if (presu == 'Brasil' ){
+    resu.innerHTML = 'Sua nacionalidade é <span>Brasileira</span>'
+    resu.innerHTML += '<br/>Seja bem-vindo(a)'
+   } else {
+     resu.innerHTML = 'Você <strong>não é de origem</strong> <span id="nao">Brasileira</span>, será deportado'
+   }
+ }
+ 
+ </script>
+</body>
+</html>
