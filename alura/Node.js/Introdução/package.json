@@ -1,0 +1,19 @@
+{
+  "name": "introducao",
+  "version": "0.0.1",
+  "description": "Livraria Casa do Codigo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "lobhaum",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.16.3",
+    "marko": "4.13.4-1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
