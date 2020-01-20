@@ -8,4 +8,4 @@ const app = express()
 const rotas = require('../app/rotas/rotas')
 rotas(app)
 
-module.exports =  app
+module.exports = app
