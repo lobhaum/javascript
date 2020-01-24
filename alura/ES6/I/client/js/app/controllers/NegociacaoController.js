@@ -18,10 +18,26 @@ class NegociacaoController {
         // console.log(this._inputValor.value)
         // console.log(typeof(this._inputData.value))
         // let data = new Date(this._inputData.value.split('-'))
-        let data = new Date(this._inputData.value.replace(/-/g,','))
-        console.log(this._inputData.value)
+        // let data = new Date(
+        //     // this._inputData.value.replace(/-/g,',')
+        //     ...this._inputData.value
+        //         .split('-')
+        //         .map(function (item, indice) {
+        //             if (indice == 1) {
+        //                 return item - 1
+        //             }
+        //             return item
+        //         })
+        // )
+        let data = new Date(
+            ...this._inputData.value
+                .split('-')
+                .map((item, indice) => item - indice % 2)
+        )
+        //console.log(data)
         let negociacao = new Negociacao(
-            this._inputData.value,
+            //this._inputData.value,
+            data,
             this._inputQuantidade.value,
             this._inputValor.value
         )
