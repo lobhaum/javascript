@@ -8,7 +8,7 @@ var paciente = document.querySelector("#primeiro-paciente");
 let pacientes = document.querySelectorAll(".paciente")
 
 for (let i = 0; i < pacientes.length; i++) {
-    
+
     var paciente = pacientes[i]
     imc()
 }
@@ -45,3 +45,8 @@ function imc() {
         tdImc.textContent = imc.toFixed(2);
     }
 }
+
+// titulo.addEventListener("click", () => console.log('Clicado'))
+
+let botaoAdicionar = document.querySelector("#adicionar-paciente")
+botaoAdicionar.addEventListener('click', () => event.preventDefault())
