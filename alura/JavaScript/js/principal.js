@@ -1,19 +1,12 @@
-let titulo = document.querySelector(".titulo")
-    .textContent = "Aparecida Nutricionista"
+var titulo = document.querySelector(".titulo");
+titulo.textContent = "Aparecida Nutricionista";
 
-// Extraindo o peso e a altura dos pacientes
+var pacientes = document.querySelectorAll(".paciente");
 
+for (var i = 0; i < pacientes.length; i++) {
 
-var paciente = document.querySelector("#primeiro-paciente");
-let pacientes = document.querySelectorAll(".paciente")
+    var paciente = pacientes[i];
 
-for (let i = 0; i < pacientes.length; i++) {
-
-    var paciente = pacientes[i]
-    imc()
-}
-
-function imc() {
     var tdPeso = paciente.querySelector(".info-peso");
     var peso = tdPeso.textContent;
 
@@ -28,26 +21,25 @@ function imc() {
     if (peso <= 0 || peso >= 1000) {
         console.log("Peso inválido!");
         pesoEhValido = false;
-        tdImc.textContent = "Peso inválido!";
-        paciente.classList.add("paciente-invalido")
-
+        tdImc.textContent = "Peso inválido";
+        paciente.classList.add("paciente-invalido");
     }
 
     if (altura <= 0 || altura >= 3.00) {
         console.log("Altura inválida!");
         alturaEhValida = false;
-        tdImc.textContent = "Altura inválida!";
-        paciente.classList.add("paciente-invalido")
+        tdImc.textContent = "Altura inválida";
+        paciente.classList.add("paciente-invalido");
     }
 
-    if (alturaEhValida && pesoEhValido) {
+    if (pesoEhValido && alturaEhValida) {
         var imc = peso / (altura * altura);
         tdImc.textContent = imc.toFixed(2);
     }
 }
 
 var botaoAdicionar = document.querySelector("#adicionar-paciente");
-botaoAdicionar.addEventListener("click", function (event) {
+botaoAdicionar.addEventListener("click", function(event) {
     event.preventDefault();
 
     var form = document.querySelector("#form-adiciona");
@@ -75,7 +67,8 @@ botaoAdicionar.addEventListener("click", function (event) {
     pacienteTr.appendChild(alturaTd);
     pacienteTr.appendChild(gorduraTd);
 
-    var tabela = document.querySelector("#tabela-pacientes")
-    tabela.appendChild(pacienteTr)
+    var tabela = document.querySelector("#tabela-pacientes");
+
+    tabela.appendChild(pacienteTr);
 
 });
