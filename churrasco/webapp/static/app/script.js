@@ -11,7 +11,8 @@ b.addEventListener("click", function(event){
     event.preventDefault();
     // pega os dados do formulário
     let dados = getData();
-    let churrasco = calculaChurrasco(dados);    
+    let churrasco = calculaChurrasco(dados); 
+    teste = document.querySelector(".resultado").innerHTML = churrasco.value   
 
     //debug
     console.log("cliquei no botao")
@@ -53,3 +54,7 @@ function getData(){
 
         return churrasco;
     }
+    /**
+     * Mostrando Resultado
+     */
+    r = document.querySelector(".resultado").innerHTML = "Ola"

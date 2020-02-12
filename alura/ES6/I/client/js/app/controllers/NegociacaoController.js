@@ -8,27 +8,28 @@ class NegociacaoController {
         this._inputData = $('#data')
         this._inputQuantidade = $('#quantidade')
         this._inputValor = $('#valor')
+        this._listaNegociacoes = new ListaNegociacoes()
     }
 
     adiciona(event) {
         event.preventDefault(); // Cancela a submissão do formulario
-        //alert('Chamei acao no controller')
-        // console.log(this._inputData.value)
-        // console.log(this._inputQuantidade.value)
-        // console.log(this._inputValor.value)
-        // console.log(typeof(this._inputData.value))
-        // let data = new Date(this._inputData.value.split('-'))
-        // let data = new Date(
-        //     // this._inputData.value.replace(/-/g,',')
-        //     ...this._inputData.value
-        //         .split('-')
-        //         .map(function (item, indice) {
-        //             if (indice == 1) {
-        //                 return item - 1
-        //             }
-        //             return item
-        //         })
-        // )
+            //alert('Chamei acao no controller')
+            // console.log(this._inputData.value)
+            // console.log(this._inputQuantidade.value)
+            // console.log(this._inputValor.value)
+            // console.log(typeof(this._inputData.value))
+            // let data = new Date(this._inputData.value.split('-'))
+            // let data = new Date(
+            //     // this._inputData.value.replace(/-/g,',')
+            //     ...this._inputData.value
+            //         .split('-')
+            //         .map(function (item, indice) {
+            //             if (indice == 1) {
+            //                 return item - 1
+            //             }
+            //             return item
+            //         })
+            // )
         let data = new Date(
             ...this._inputData.value
                 .split('-')
@@ -42,5 +43,16 @@ class NegociacaoController {
             this._inputValor.value
         )
         console.log(negociacao)
+
+        this._listaNegociacoes.adiciona(negociacao)
+        this._limpaFormulario()
+
+        console.log(this._listaNegociacoes.negociacoes)
+    }
+    _limpaFormulario(){
+        this._inputData.value = '';
+        this._inputQuantidade.value = '';
+        this._inputValor.value = 0.0;
+        this._inputData.focus();
     }
 }
